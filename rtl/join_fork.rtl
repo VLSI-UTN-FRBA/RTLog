@@ -1,0 +1,22 @@
+block join_fork
+begin
+	ports
+	begin
+		input logic i_gamma
+		input logic i_delta
+		input logic i_epsilon
+		output reg a
+		output reg b
+	end
+
+	reg c
+	reg d
+	reg	e
+
+	c = i_gamma
+	d = i_delta
+	e = i_epsilon
+
+	a = c and d and e
+	b = c or e
+end
