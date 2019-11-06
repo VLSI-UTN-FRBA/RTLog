@@ -11,7 +11,7 @@ begin
 
 	reg c
 	reg d
-	reg	e
+	reg e
 
 	c = i_gamma
 	d = i_delta

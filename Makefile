@@ -1,13 +1,6 @@
 # Makefile
 # Version: 2.0
-# Año: 2019
-
-
-
-
-
-
-
+# Year: 2019
 
 
 
@@ -30,13 +23,6 @@ LDLIBS += -lm
 
 
 
-
-
-
-
-
-
-
 # ******************************************************************** #
 # ************************* Constant defines ************************* #
 # ******************************************************************** #
@@ -54,13 +40,13 @@ OBJ_DIRS = $(OBJ:%.o=%)
 OBJ_MAIN = $(SRC_MAIN:$(MAIN_DIR)/%.cc=$(OBJ_DIR)/%.o)
 EXAMPLE = $(firstword $(wildcard $(EXAMPLE_DIR)/*.rtl))
 
-define COMPILAR
+define COMPILE
 	@echo	''
 	@echo	''
 	@echo	''
 	@echo	''
 	@echo	''
-	@echo	'-----> Compilando: '$(2)
+	@echo	'-----> Compiling: '$(2)
 	@echo	''
 
 	$(CC) $(CXXFLAGS) $(CFLAGS) -c $(firstword $(2)) -o $(1)
@@ -68,18 +54,11 @@ endef
 
 
 
-
-
-
-
-
-
-
 # ******************************************************************** #
 # ****************************** Reglas ****************************** #
 # ******************************************************************** #
 .PHONY: all
-all: create_output_dir $(OUTPUT) ejecutar
+all: create_output_dir $(OUTPUT) execute
 
 $(OUTPUT): $(OBJ) $(OBJ_MAIN)
 	@echo	''
@@ -87,7 +66,7 @@ $(OUTPUT): $(OBJ) $(OBJ_MAIN)
 	@echo	''
 	@echo	''
 	@echo	''
-	@echo	'-----> Linkeando: '$(OBJ)
+	@echo	'-----> Linking: '$(OBJ)
 	@echo	''
 	$(CC) $(OBJ) $(LDLIBS) -o $@
 	@echo	''
@@ -95,7 +74,7 @@ $(OUTPUT): $(OBJ) $(OBJ_MAIN)
 	@echo	''
 	@echo	''
 	@echo	''
-	@echo	'READY'	
+	@echo	'READY'
 	@echo	''
 	@echo	''
 	@echo	''
@@ -104,25 +83,23 @@ $(OUTPUT): $(OBJ) $(OBJ_MAIN)
 
 
 
-
-
-.PHONY: ejecutar
-ejecutar:
-	@echo	'Ejecutando...'
+.PHONY: execute
+execute:
+	@echo	'Executing...'
 	./$(PROGRAM) ./rtl/join_fork.rtl
 
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cc $(INC_DIR)/%.h
-	$(call COMPILAR, $@, $^)
+	$(call COMPILE, $@, $^)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cc
-	$(call COMPILAR, $@, $^)
+	$(call COMPILE, $@, $^)
 
 $(OBJ_DIR)/%.o: $(MAIN_DIR)/%.cc $(INC_DIR)/%.h
-	$(call COMPILAR, $@, $^)
+	$(call COMPILE, $@, $^)
 
 $(OBJ_DIR)/%.o: $(MAIN_DIR)/%.cc
-	$(call COMPILAR, $@, $^)
+	$(call COMPILE, $@, $^)
 
 .PHONY: create_output_dir
 create_output_dir:
@@ -130,7 +107,7 @@ create_output_dir:
 	@echo $(SRC)
 	@echo 'obj:'
 	@echo $(OBJ)
-	mkdir -p $(OBJ_DIRS)
+	mkdir -p ./obj
 
 .PHONY: clean
 clean:
@@ -139,8 +116,7 @@ clean:
 	@echo	''
 	@echo	''
 	@echo	''
-	@echo	'-----> Limpiando'
+	@echo	'-----> Cleaning'
 	@echo	''
 
 	$(RM) $(OBJ) $(OBJ_MAIN) $(OUTPUT)
-
