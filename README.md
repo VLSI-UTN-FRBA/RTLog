@@ -25,12 +25,17 @@ The Verilog files with the linear, fork and join controllers are missing, as the
 TO DO:
 
 -License this
+
 -Translation of code comments to Doxygen format and English
+
 -constrainer needs further comenting and verification
+
 -constrainer needs input target
 
 Known bugs:
 -Async output handshake ports sometimes are not generated
+
 -R2R file generation fails when the output is single bit long
+
 -R2R files has an extra space after delimiter, must be manually edited
 
