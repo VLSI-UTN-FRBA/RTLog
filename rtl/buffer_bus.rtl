@@ -1,0 +1,15 @@
+block buffer_bus
+begin
+	ports
+	begin
+		input logic a[4]
+		output logic b[4]
+	end
+
+	reg a_i[4]
+	reg b_i[4]
+
+	a_i = a
+	b_i = a_i
+	b = b_i
+end

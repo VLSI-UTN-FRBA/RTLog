@@ -1,0 +1,15 @@
+block buffer
+begin
+	ports
+	begin
+		input logic a
+		output logic b
+	end
+
+	reg a_i
+	reg b_i
+
+	a_i = a
+	b_i = a_i
+	b = b_i
+end
