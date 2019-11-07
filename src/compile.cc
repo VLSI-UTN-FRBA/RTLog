@@ -365,7 +365,7 @@ bool async_check(int argc, char *argv[])
 		{
 			i++;
 			v_str = std::string(argv[i]);
-			std::cout << v_str;
+			//std::cout << v_str;
 			/*
        * clock type is missing
        */
