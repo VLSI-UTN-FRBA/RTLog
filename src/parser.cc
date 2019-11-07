@@ -1420,7 +1420,7 @@ ports." << endl;
 
 bool Parser::emit(void)
 {
-	emt.create();
+	emt.create(is_async);
 
 	emt.module(tok.getSymbol(block_name));
 

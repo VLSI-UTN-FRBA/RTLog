@@ -90,7 +90,7 @@ class Emitter
 	public:
 		void body(vector<Node*>* cells,
 					vector<Net*>* nets);
-		void create(void);
+		void create(bool is_async);
 		void decls(vector<Port> &decl_table);
 		void module(string block);
 		void ports(vector<Port> &p_tb, bool is_async);

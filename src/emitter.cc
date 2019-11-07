@@ -657,9 +657,16 @@ void Emitter::cpneq(Node *node, int n)
 //  nada.                                                //
 ///////////////////////////////////////////////////////////
 
-void Emitter::create(void)
+void Emitter::create(bool is_async)
 {
-	file.open(path + vname + ".v", fstream::out);
+	if(!is_async)
+	{
+			file.open(path + vname + ".v", fstream::out);
+	}
+	else
+	{
+			file.open(path + vname + "_a" + ".v", fstream::out);
+	}
 
 	locals.clear();
 	stmts.clear();
