@@ -1,0 +1,29 @@
+block join_fork_big
+begin
+	ports
+	begin
+		input logic i_w
+		input logic i_x
+		input logic i_y
+		input logic i_z
+		output reg a
+		output reg b
+		output reg d
+		output reg c
+	end
+
+	reg w
+	reg	x
+	reg y
+	reg	z
+
+	w = i_w
+	x = i_x
+	y = i_y
+	z = i_z
+
+	a = w
+	b = w and x
+	c = w and x and y
+	d = w and x and y and z
+end

@@ -1,0 +1,48 @@
+block fir_transpose
+begin
+	ports
+	begin
+		input logic X[16]
+		output reg Y[16]
+	end
+
+    logic   mul_0[32]
+    logic   mul_1[32]
+    logic   mul_2[32]
+    logic   mul_3[32]
+    logic   add_0[16]
+    logic   add_1[16]
+    logic   add_2[16]
+
+    logic   coef_0[16]
+    logic   coef_1[16]
+    logic   coef_2[16]
+    logic   coef_3[16]
+
+    reg     tap_1[16]   
+    reg     tap_2[16]
+    reg     tap_3[16]
+
+    reg     z[16]
+
+    coef_0 = &h1ffa
+    coef_1 = &h1ffa
+    coef_2 = &h019d
+    coef_3 = &h1ffa
+
+    z = X
+
+	mul_3 = z * coef_0
+	mul_2 = z * coef_1
+	mul_1 = z * coef_2
+	mul_0 = z * coef_3
+
+	add_0=mul_0[31:16] + tap_1
+	add_1=mul_1[31:16] + tap_2
+	add_2=mul_2[31:16] + tap_3
+
+	tap_1=add_1
+	tap_2=add_2
+	tap_3=mul_3[31:16]
+	Y=add_0
+end

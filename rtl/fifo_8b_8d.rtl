@@ -1,0 +1,28 @@
+block fifo_8b_8d
+begin
+	ports
+	begin
+		input logic din[8]
+		output logic dout[8]
+	end
+
+	reg r1[8]
+	reg r2[8]
+	reg r3[8]
+	reg r4[8]
+	reg r5[8]
+	reg r6[8]
+	reg r7[8]
+	reg r8[8]
+
+	r1 = din
+	r2 = r1
+	r3 = r2
+	r4 = r3
+	r5 = r4
+	r6 = r5
+	r7 = r6
+	r8 = r7
+
+	dout = r8
+end
