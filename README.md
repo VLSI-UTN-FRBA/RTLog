@@ -20,3 +20,17 @@ Help showed when running without arguments:
 	  0  if everything went right
 	  1  if it didn't do anything (for example, it run this help),
 
+The Verilog files with the linear, fork and join controllers are missing, as they are technology mapped to our available technology node and therefore NDA protected.
+
+TO DO:
+
+-License this
+-Translation of code comments to Doxygen format and English
+-constrainer needs further comenting and verification
+-constrainer needs input target
+
+Known bugs:
+-Async output handshake ports sometimes are not generated
+-R2R file generation fails when the output is single bit long
+-R2R files has an extra space after delimiter, must be manually edited
+
