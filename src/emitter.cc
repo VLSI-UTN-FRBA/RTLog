@@ -105,7 +105,7 @@ void Emitter::add(Node *node, int n)
 	locals << "\twire add_" << std::to_string(n);
 	locals << "[" << std::to_string(node->getWidth() - 1) << ":0]";
 	locals << ";" << endl;
-	
+
 	for (auto &bus : fanouts)
 	{
 		i = 0;
@@ -153,7 +153,7 @@ void Emitter::addcout(Node *node, int n)
 	locals << "\twire add_" << std::to_string(n);
 	locals << "[" << std::to_string(node->getWidth() - 1) << ":0]";
 	locals << ";" << endl;
-	
+
 	for (auto &bus : fanouts)
 	{
 		i = 0;
@@ -222,7 +222,7 @@ void Emitter::and2(Node *node, int n)
 //  nada.                                                //
 ///////////////////////////////////////////////////////////
 
-void Emitter::body(vector<Node*>* cells, 
+void Emitter::body(vector<Node*>* cells,
 					vector<Net*>* nets)
 {
 	int i;
@@ -754,7 +754,7 @@ string Emitter::getFullName(string name)
 {
 	size_t i = name.rfind('/', name.length());
 
-	if (i != string::npos) 
+	if (i != string::npos)
 	{
 		return (name.substr(i + 1, name.length() - i));
 	}
@@ -775,7 +775,7 @@ string Emitter::getMainName(string name)
 {
 	size_t i = name.rfind('.', name.length());
 
-	if (i != string::npos) 
+	if (i != string::npos)
 	{
 		return (name.substr(0, i));
 	}
@@ -796,7 +796,7 @@ string Emitter::getPath(string name)
 {
 	size_t i = name.rfind('/', name.length());
 
-	if (i != string::npos) 
+	if (i != string::npos)
 	{
 		return (name.substr(0, i + 1));
 	}
@@ -1062,7 +1062,7 @@ void Emitter::mult(Node *node, int n)
 	locals << "\twire mult_" << std::to_string(n);
 	locals << "[" << std::to_string(node->getWidth() - 1) << ":0]";
 	locals << ";" << endl;
-	
+
 	for (auto &bus : fanouts)
 	{
 		i = 0;
@@ -1145,7 +1145,7 @@ void Emitter::neg(Node *node, int n)
 	locals << "\twire neg_" << std::to_string(n);
 	locals << "[" << std::to_string(node->getWidth() - 1) << ":0]";
 	locals << ";" << endl;
-	
+
 	for (auto &bus : fanouts)
 	{
 		i = 0;
@@ -1211,10 +1211,17 @@ void Emitter::or2(Node *node, int n)
 //  nada.                                                //
 ///////////////////////////////////////////////////////////
 
-void Emitter::ports(vector<Port> &p_tb)
+void Emitter::ports(vector<Port> &p_tb, bool is_async)
 {
 	file << "\t\tinput wire rst,";
 	file << std::endl;
+
+	if (!is_async)
+	{
+		file << "\t\tinput wire clk,";
+		file << std::endl;
+	}
+
 
 	for (auto &p : p_tb)
 	{
@@ -1384,7 +1391,7 @@ void Emitter::sub(Node *node, int n)
 	locals << "\twire sub_" << std::to_string(n);
 	locals << "[" << std::to_string(node->getWidth() - 1) << ":0]";
 	locals << ";" << endl;
-	
+
 	for (auto &bus : fanouts)
 	{
 		i = 0;
@@ -1432,7 +1439,7 @@ void Emitter::subbout(Node *node, int n)
 	locals << "\twire sub_" << std::to_string(n);
 	locals << "[" << std::to_string(node->getWidth() - 1) << ":0]";
 	locals << ";" << endl;
-	
+
 	for (auto &bus : fanouts)
 	{
 		i = 0;

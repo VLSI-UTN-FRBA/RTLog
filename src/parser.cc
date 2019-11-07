@@ -186,7 +186,7 @@ void Parser::assign(void)
 	if (!tok.getNext(token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en una asignacion." 
+		cout << "Final abrupto del codigo en una asignacion."
 				<< endl;
 		cout << "id = right value :P." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -224,7 +224,7 @@ void Parser::assign(void)
 		if (!throw_nl())
 		{
 			cout << "[ERROR] Insuficientes tokens." << endl;
-			cout << "Final abrupto del codigo." 
+			cout << "Final abrupto del codigo."
 					<< endl;
 			cout << "El codigo debe terminar en end." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
@@ -248,7 +248,7 @@ void Parser::assign(void)
 		if (!throw_nl())
 		{
 			cout << "[ERROR] Insuficientes tokens." << endl;
-			cout << "Final abrupto del codigo." 
+			cout << "Final abrupto del codigo."
 					<< endl;
 			cout << "El codigo debe terminar en end." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
@@ -277,7 +277,7 @@ void Parser::block(void)
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion block." 
+		cout << "Final abrupto del codigo en construccion block."
 				<< endl;
 		cout << "No define un block." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -297,7 +297,7 @@ void Parser::block(void)
 	if (!tok.getNext(token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion block." 
+		cout << "Final abrupto del codigo en construccion block."
 				<< endl;
 		cout << "No define un block." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -308,11 +308,11 @@ void Parser::block(void)
 	if (!token.match(TK_ID))
 	{
 		cout << "[ERROR] Token invalido." << endl;
-		cout << "Se esperaba un identificador de block." 
+		cout << "Se esperaba un identificador de block."
 				<< endl;
 		cout << "No define un block." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	// nombre del block
@@ -322,7 +322,7 @@ void Parser::block(void)
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion block." 
+		cout << "Final abrupto del codigo en construccion block."
 				<< endl;
 		cout << "No define un block." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -357,7 +357,7 @@ block." << endl;
 		cout << "La declaracion de un block debe estar \
 en una linea." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 }
 
@@ -401,7 +401,7 @@ void Parser::boolean(void)
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion if." 
+		cout << "Final abrupto del codigo en construccion if."
 				<< endl;
 		cout << "Error de sintaxis en construccion if." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -421,7 +421,7 @@ void Parser::boolean(void)
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion if." 
+		cout << "Final abrupto del codigo en construccion if."
 				<< endl;
 		cout << "Error de sintaxis en construccion if." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -435,7 +435,7 @@ void Parser::boolean(void)
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion if." 
+		cout << "Final abrupto del codigo en construccion if."
 				<< endl;
 		cout << "Error de sintaxis en construccion if." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -455,7 +455,7 @@ void Parser::boolean(void)
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion if." 
+		cout << "Final abrupto del codigo en construccion if."
 				<< endl;
 		cout << "Error de sintaxis en construccion if." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -475,7 +475,7 @@ void Parser::boolean(void)
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion if." 
+		cout << "Final abrupto del codigo en construccion if."
 				<< endl;
 		cout << "Error de sintaxis en construccion if." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -493,7 +493,7 @@ void Parser::boolean(void)
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion if." 
+		cout << "Final abrupto del codigo en construccion if."
 				<< endl;
 		cout << "Error de sintaxis en construccion if." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -585,7 +585,7 @@ void Parser::decls(void)
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en declaraciones locales." 
+		cout << "Final abrupto del codigo en declaraciones locales."
 				<< endl;
 		cout << "Error de sintaxis en declaraciones locales." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -593,7 +593,7 @@ void Parser::decls(void)
 	}
 
 	// agenda wire hasta que aparezcan sentencias
-	while (token.match(TK_KW, KW_LOGIC) || 
+	while (token.match(TK_KW, KW_LOGIC) ||
 			token.match(TK_KW, KW_REG))
 	{
 		// logic
@@ -602,7 +602,7 @@ void Parser::decls(void)
 			if (!tok.getNext(token))
 			{
 				cout << "[ERROR] Insuficientes tokens." << endl;
-				cout << "Final abrupto del codigo en declaraciones locales." 
+				cout << "Final abrupto del codigo en declaraciones locales."
 						<< endl;
 				cout << "logic a :)" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
@@ -613,11 +613,11 @@ void Parser::decls(void)
 			if (!token.match(TK_ID))
 			{
 				cout << "[ERROR] Token invalido." << endl;
-				cout << "Se esperaba un identificador de wire." 
+				cout << "Se esperaba un identificador de wire."
 						<< endl;
 				cout << "logic id :P" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			// rescata identificador del wire
@@ -629,7 +629,7 @@ void Parser::decls(void)
 			if (!tok.getNext(token))
 			{
 				cout << "[ERROR] Insuficientes tokens." << endl;
-				cout << "Final abrupto del codigo en declaraciones locales." 
+				cout << "Final abrupto del codigo en declaraciones locales."
 						<< endl;
 				cout << "logic a :)" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
@@ -646,7 +646,7 @@ void Parser::decls(void)
 				if (!tok.getNext(token))
 				{
 					cout << "[ERROR] Insuficientes tokens." << endl;
-					cout << "Final abrupto del codigo en declaraciones locales." 
+					cout << "Final abrupto del codigo en declaraciones locales."
 							<< endl;
 					cout << "Error de sintaxis en construccion en declaraciones locales."  << endl;
 					cout << "Linea: " << tok.getNLine() << endl;
@@ -657,11 +657,11 @@ void Parser::decls(void)
 				if (!token.match(TK_OP, OP_IX_CL))
 				{
 					cout << "[ERROR] Token invalido." << endl;
-					cout << "Se esperaba un token ]." 
+					cout << "Se esperaba un token ]."
 							<< endl;
 					cout << "Desbalanceo de corchetes en en declaraciones locales."  << endl;
 					cout << "Linea: " << tok.getNLine() << endl;
-					exit(1);		
+					exit(1);
 				}
 
 				// verifica que el identificador no este usado
@@ -669,9 +669,9 @@ void Parser::decls(void)
 				{
 					cout << "[ERROR] Identificador ya usado." << endl;
 					cout << "El identificador del wire no debe \
-haberse usado previamente" << endl; 
+haberse usado previamente" << endl;
 					cout << "Linea: " << tok.getNLine() << endl;
-					exit(1);		
+					exit(1);
 				}
 
 				if (!tok.getNext(token))
@@ -690,7 +690,7 @@ haberse usado previamente" << endl;
 					cout << "Se esperaba un enter." << endl;
 					cout << "Error de sintaxis en declaraciones locales." << endl;
 					cout << "Linea: " << tok.getNLine() << endl;
-					exit(1);		
+					exit(1);
 				}
 
 				tok.lockSymbol(wire_id);
@@ -715,9 +715,9 @@ haberse usado previamente" << endl;
 				{
 					cout << "[ERROR] Identificador ya usado." << endl;
 					cout << "El identificador del wire no debe \
-haberse usado previamente" << endl; 
+haberse usado previamente" << endl;
 					cout << "Linea: " << tok.getNLine() << endl;
-					exit(1);		
+					exit(1);
 				}
 
 				tok.lockSymbol(wire_id);
@@ -741,7 +741,7 @@ haberse usado previamente" << endl;
 				cout << "Las declaraciones locales deben estar \
 en una linea." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 		}
 		// reg
@@ -750,7 +750,7 @@ en una linea." << endl;
 			if (!tok.getNext(token))
 			{
 				cout << "[ERROR] Insuficientes tokens." << endl;
-				cout << "Final abrupto del codigo en declaraciones locales." 
+				cout << "Final abrupto del codigo en declaraciones locales."
 						<< endl;
 				cout << "reg a :)" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
@@ -761,11 +761,11 @@ en una linea." << endl;
 			if (!token.match(TK_ID))
 			{
 				cout << "[ERROR] Token invalido." << endl;
-				cout << "Se esperaba un identificador de reg." 
+				cout << "Se esperaba un identificador de reg."
 						<< endl;
 				cout << "reg id :P" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			// rescata identificador del reg
@@ -777,7 +777,7 @@ en una linea." << endl;
 			if (!tok.getNext(token))
 			{
 				cout << "[ERROR] Insuficientes tokens." << endl;
-				cout << "Final abrupto del codigo en declaraciones locales." 
+				cout << "Final abrupto del codigo en declaraciones locales."
 						<< endl;
 				cout << "reg a :)" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
@@ -794,7 +794,7 @@ en una linea." << endl;
 				if (!tok.getNext(token))
 				{
 					cout << "[ERROR] Insuficientes tokens." << endl;
-					cout << "Final abrupto del codigo en declaraciones locales." 
+					cout << "Final abrupto del codigo en declaraciones locales."
 							<< endl;
 					cout << "Error de sintaxis en construccion en declaraciones locales."  << endl;
 					cout << "Linea: " << tok.getNLine() << endl;
@@ -805,11 +805,11 @@ en una linea." << endl;
 				if (!token.match(TK_OP, OP_IX_CL))
 				{
 					cout << "[ERROR] Token invalido." << endl;
-					cout << "Se esperaba un token ]." 
+					cout << "Se esperaba un token ]."
 							<< endl;
 					cout << "Desbalanceo de corchetes en en declaraciones locales."  << endl;
 					cout << "Linea: " << tok.getNLine() << endl;
-					exit(1);		
+					exit(1);
 				}
 
 				if (!tok.getNext(token))
@@ -828,7 +828,7 @@ en una linea." << endl;
 					cout << "Se esperaba un enter." << endl;
 					cout << "Error de sintaxis en declaraciones locales." << endl;
 					cout << "Linea: " << tok.getNLine() << endl;
-					exit(1);		
+					exit(1);
 				}
 
 				// verifica que el identificador no este usado
@@ -836,9 +836,9 @@ en una linea." << endl;
 				{
 					cout << "[ERROR] Identificador ya usado." << endl;
 					cout << "El identificador del reg no debe \
-haberse usado previamente" << endl; 
+haberse usado previamente" << endl;
 					cout << "Linea: " << tok.getNLine() << endl;
-					exit(1);		
+					exit(1);
 				}
 
 				tok.lockSymbol(reg_id);
@@ -866,9 +866,9 @@ haberse usado previamente" << endl;
 				{
 					cout << "[ERROR] Identificador ya usado." << endl;
 					cout << "El identificador del wire no debe \
-haberse usado previamente" << endl; 
+haberse usado previamente" << endl;
 					cout << "Linea: " << tok.getNLine() << endl;
-					exit(1);		
+					exit(1);
 				}
 
 				tok.lockSymbol(reg_id);
@@ -895,14 +895,14 @@ haberse usado previamente" << endl;
 				cout << "Las declaraciones locales deben estar \
 en una linea." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 		}
 
 		if (!throw_nl())
 		{
 			cout << "[ERROR] Insuficientes tokens." << endl;
-			cout << "Final abrupto del codigo en declaraciones locales." 
+			cout << "Final abrupto del codigo en declaraciones locales."
 					<< endl;
 			cout << "Error de sintaxis en declaraciones locales." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
@@ -1023,7 +1023,7 @@ void Parser::desync(void)
 		// inserta join controller primario
 		if (jc_tree->Get_Node() == -2)
 		{
-			jc = Insert_JC(jc_tree, meta_graph.Query_LC(i), 
+			jc = Insert_JC(jc_tree, meta_graph.Query_LC(i),
 							FAN_ACK_LEFT, FAN_REQ_LEFT);
 		}
 		// no hay arbol de join controllers
@@ -1045,7 +1045,7 @@ void Parser::desync(void)
 		// inserta fork controller primario
 		if (fc_tree->Get_Node() == -2)
 		{
-			fc = Insert_FC(fc_tree, meta_graph.Query_LC(i), 
+			fc = Insert_FC(fc_tree, meta_graph.Query_LC(i),
 							FAN_REQ_RIGHT, FAN_ACK_RIGHT);
 		}
 		// no hay arbol de fork controllers
@@ -1066,7 +1066,7 @@ void Parser::desync(void)
 		int i, j, k;
 		int fc;
 		int jc;
-	
+
 		i = meta_graph.Find_From_Id(l);
 
 		// obtiene los fanouts
@@ -1333,7 +1333,7 @@ void Parser::desync(void)
         file << std::endl;
     }
 
-    file.close();    
+    file.close();
 }
 
 ///////////////////////////////////////////////////////////
@@ -1388,21 +1388,21 @@ ports." << endl;
 		else
 		{
 			cout << "[ERROR] Token invalido." << endl;
-			cout << "Identificador no reconocido como parametro." 
+			cout << "Identificador no reconocido como parametro."
 					<< endl;
 			cout << "Error de sintaxis en construccion ports." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
 	}
 	else
 	{
 		cout << "[ERROR] Token invalido." << endl;
-		cout << "Se esperaba una constante o identificador." 
+		cout << "Se esperaba una constante o identificador."
 				<< endl;
 		cout << "Error de sintaxis en construccion ports." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	return d;
@@ -1424,7 +1424,7 @@ bool Parser::emit(void)
 
 	emt.module(tok.getSymbol(block_name));
 
-	emt.ports(port_table);
+	emt.ports(port_table, is_async);
 
 	emt.decls(local_table);
 
@@ -1483,9 +1483,9 @@ vector<int> Parser::expr(int expc_width)
 	}
 
 	// expr + term o expr +x term o expr - term o expr -x term
-	while (op_token.match(TK_OP, OP_ADD) || 
-			op_token.match(TK_OP, OP_ADDC) || 
-			op_token.match(TK_OP, OP_SUB) || 
+	while (op_token.match(TK_OP, OP_ADD) ||
+			op_token.match(TK_OP, OP_ADDC) ||
+			op_token.match(TK_OP, OP_SUB) ||
 			op_token.match(TK_OP, OP_SUBB))
 	{
 		// expr + term
@@ -1619,7 +1619,7 @@ int Parser::f_eval_expr()
 	/* eval_expr + eval_term
      * o eval_expr - eval_term
      */
-	while (v_op_token.match(TK_OP, OP_ADD) || 
+	while (v_op_token.match(TK_OP, OP_ADD) ||
 			v_op_token.match(TK_OP, OP_SUB))
 	{
 		ix2 = this->f_eval_term();
@@ -1676,7 +1676,7 @@ int Parser::f_eval_factor()
 
 	/* gramatica
 	 * eval_factor := num |
-	 *                id 
+	 *                id
      *                ( eval_logic )
      */
 	if (!tok.getNext(v_ix_token))
@@ -1737,9 +1737,9 @@ int Parser::f_eval_factor()
 			std::cout << "Linea: ";
 			std::cout << tok.getNLine();
 			std::cout << std::endl;
-			exit(1);		
+			exit(1);
 		}
-	
+
 		return generate_indices[ix];
 	}
 	/* num */
@@ -1897,7 +1897,7 @@ int Parser::f_eval_rel()
 	}
 
 	/* eval_rel < eval_expr |
-     * eval_rel <= eval_expr 
+     * eval_rel <= eval_expr
      * eval_rel > eval_expr |
      * eval_rel >= eval_expr |
      * eval_rel == eval_expr |
@@ -2060,7 +2060,7 @@ int Parser::f_eval_term()
 	/* eval_term * eval_unary
      * o eval_term / eval_unary
      */
-	while (v_op_token.match(TK_OP, OP_MULT) || 
+	while (v_op_token.match(TK_OP, OP_MULT) ||
 			v_op_token.match(TK_OP, OP_DIV))
 	{
 		ix2 = this->f_eval_unary();
@@ -2117,7 +2117,7 @@ int Parser::f_eval_unary()
 	int node;
 	vector<int> bus;
 	vector<int> rvalue;
-	
+
 	Token v_token;
 
 	if (!tok.getNext(v_token))
@@ -2191,7 +2191,7 @@ vector<int> Parser::factor(int expc_width)
 		{
 			cout << "[ERROR] Identificador no declarado." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
 
 		if (!tok.getNext(token))
@@ -2224,7 +2224,7 @@ vector<int> Parser::factor(int expc_width)
 				cout << "Se esperaba un ]." << endl;
 				cout << "Desbalanceo de corchetes." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 		}
 		// id sin indexar
@@ -2245,7 +2245,7 @@ vector<int> Parser::factor(int expc_width)
 	// num
 	else if (token.match(TK_NUM))
 	{
-		nodes = tok.dec2Bin(tok.getNum(token.getN()), 
+		nodes = tok.dec2Bin(tok.getNum(token.getN()),
 							expc_width);
 
 		for (auto &n: nodes)
@@ -2301,7 +2301,7 @@ vector<int> Parser::factor(int expc_width)
 		cout << "Se esperaba un id o un num." << endl;
 		cout << "Error de sintaxis en una sentencia." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 }
 
@@ -2366,14 +2366,14 @@ void Parser::for_generate(void)
 	int num_id;
 
 	// gramatica
-	// forgenerate := for id in range ( num , num ) : 
+	// forgenerate := for id in range ( num , num ) :
     //                nl_list begin nl_list stmts end
 
 	// id
 	if (!tok.getNext(token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en un for." 
+		cout << "Final abrupto del codigo en un for."
 				<< endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -2384,11 +2384,11 @@ void Parser::for_generate(void)
 	if (!token.match(TK_ID))
 	{
 		cout << "[ERROR] Token invalido." << endl;
-		cout << "Se esperaba un identificador de indice." 
+		cout << "Se esperaba un identificador de indice."
 				<< endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	// rescata identificador del indice
@@ -2399,9 +2399,9 @@ void Parser::for_generate(void)
 	{
 		cout << "[ERROR] Identificador ya usado." << endl;
 		cout << "El identificador del indice no debe \
-haberse usado previamente" << endl; 
+haberse usado previamente" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	/* bloquea el uso del simbolo para que no lo
@@ -2414,7 +2414,7 @@ haberse usado previamente" << endl;
 	if (!tok.getNext(token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en un for." 
+		cout << "Final abrupto del codigo en un for."
 				<< endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -2428,14 +2428,14 @@ haberse usado previamente" << endl;
 		cout << "Se esperaba keyword in."  << endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	// range
 	if (!tok.getNext(token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en un for." 
+		cout << "Final abrupto del codigo en un for."
 				<< endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -2449,14 +2449,14 @@ haberse usado previamente" << endl;
 		cout << "Se esperaba keyword range."  << endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	// (
 	if (!tok.getNext(token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en un for." 
+		cout << "Final abrupto del codigo en un for."
 				<< endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -2470,14 +2470,14 @@ haberse usado previamente" << endl;
 		cout << "Se esperaba (."  << endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	// num
 	if (!tok.getNext(ix1_token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en un for." 
+		cout << "Final abrupto del codigo en un for."
 				<< endl;
 		cout << "Error de sintaxis en una indexacion." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -2491,7 +2491,7 @@ haberse usado previamente" << endl;
 		cout << "Se esperaba una constante." << endl;
 		cout << "Error de sintaxis en una indexacion." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	num_id = ix1_token.getN();
@@ -2503,7 +2503,7 @@ haberse usado previamente" << endl;
 	if (!tok.getNext(token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en un for." 
+		cout << "Final abrupto del codigo en un for."
 				<< endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -2517,14 +2517,14 @@ haberse usado previamente" << endl;
 		cout << "Se esperaba ,."  << endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	// num
 	if (!tok.getNext(ix2_token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en un for." 
+		cout << "Final abrupto del codigo en un for."
 				<< endl;
 		cout << "Error de sintaxis en una indexacion." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -2538,7 +2538,7 @@ haberse usado previamente" << endl;
 		cout << "Se esperaba una constante." << endl;
 		cout << "Error de sintaxis en una indexacion." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	num_id = ix2_token.getN();
@@ -2550,7 +2550,7 @@ haberse usado previamente" << endl;
 	if (!tok.getNext(token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en un for." 
+		cout << "Final abrupto del codigo en un for."
 				<< endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -2564,14 +2564,14 @@ haberse usado previamente" << endl;
 		cout << "Se esperaba )."  << endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	// :
 	if (!tok.getNext(token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en un for." 
+		cout << "Final abrupto del codigo en un for."
 				<< endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -2585,7 +2585,7 @@ haberse usado previamente" << endl;
 		cout << "Se esperaba :."  << endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	// ix1 > ix2
@@ -2617,7 +2617,7 @@ ports." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
 
 		token.print();
-		exit(1);		
+		exit(1);
 	}
 
 	if (!throw_nl())
@@ -2637,14 +2637,14 @@ ports." << endl;
 	if (!tok.getNext(token))
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en un for." 
+		cout << "Final abrupto del codigo en un for."
 				<< endl;
 		cout << "for i in range (0, 7): :)" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
 		exit(1);
 	}
 
-	/* when 
+	/* when
      * for generate condicional
      */
 	if (token.match(TK_KW, KW_WHEN))
@@ -2655,7 +2655,7 @@ ports." << endl;
          * recibe como argumentos al rango del indice
          * y el identificador ( el nombre )
          */
-		f_generate_conditional(index_id, ix1, ix2);		
+		f_generate_conditional(index_id, ix1, ix2);
 	}
 	/* for generate incondicional */
 	else
@@ -2707,7 +2707,7 @@ ports." << endl;
 
 void Parser::f_generate_condition(int index_id,
                                     int ix1,
-									int ix2, 
+									int ix2,
 									std::vector<int> &ix_matches)
 {
 	int ix;
@@ -2771,7 +2771,7 @@ void Parser::f_generate_condition(int index_id,
 		std::cout << std::endl;
 		std::cout << "Linea: " << tok.getNLine();
 		std::cout << std::endl;
-		exit(1);		
+		exit(1);
 	}
 }
 
@@ -2842,7 +2842,7 @@ void Parser::f_generate_conditional(int index_id, int ix1, int ix2)
 			std::cout << std::endl;
 
 			token.print();
-			exit(1);		
+			exit(1);
 		}
 
 		/* others */
@@ -2887,7 +2887,7 @@ void Parser::f_generate_conditional(int index_id, int ix1, int ix2)
 				std::cout << std::endl;
 				std::cout << "Linea: " << tok.getNLine();
 				std::cout << std::endl;
-				exit(1);		
+				exit(1);
 			}
 
 			tok.getNext(token);
@@ -2956,7 +2956,7 @@ void Parser::f_generate_conditional(int index_id, int ix1, int ix2)
 		if (!throw_nl())
 		{
 			cout << "[ERROR] Insuficientes tokens." << endl;
-			cout << "Final abrupto del codigo en construccion block." 
+			cout << "Final abrupto del codigo en construccion block."
 					<< endl;
 			cout << "No define un block." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
@@ -3008,7 +3008,7 @@ int Parser::f_generate_factor()
 		std::cout << std::endl;
 		std::cout << "Linea: " << tok.getNLine();
 		std::cout << std::endl;
-		exit(1);		
+		exit(1);
 	}
 
 	/* rescata identificador de la constante */
@@ -3059,7 +3059,7 @@ std::string Parser::getMainName(std::string name)
 {
 	size_t i = name.rfind('.', name.length());
 
-	if (i != std::string::npos) 
+	if (i != std::string::npos)
 	{
 		return (name.substr(0, i));
 	}
@@ -3080,7 +3080,7 @@ std::string Parser::getMainName(std::string name)
 vector<int> Parser::getNodes(int id)
 {
 	vector<int> nodes;
-	
+
 	nodes = tok.getNodes(id);
 
 	return nodes;
@@ -3099,7 +3099,7 @@ std::string Parser::getPath(std::string name)
 {
 	size_t i = name.rfind('/', name.length());
 
-	if (i != std::string::npos) 
+	if (i != std::string::npos)
 	{
 		return (name.substr(0, i + 1));
 	}
@@ -3189,11 +3189,11 @@ ports." << endl;
 	if (!token.match(TK_ID))
 	{
 		cout << "[ERROR] Token invalido." << endl;
-		cout << "Se esperaba un identificador de port." 
+		cout << "Se esperaba un identificador de port."
 				<< endl;
 		cout << "input port id :P" << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	// rescata identificador del puerto
@@ -3233,11 +3233,11 @@ ports." << endl;
 		if (!token.match(TK_OP, OP_IX_CL))
 		{
 			cout << "[ERROR] Token invalido." << endl;
-			cout << "Se esperaba un token ]." 
+			cout << "Se esperaba un token ]."
 					<< endl;
 			cout << "Desbalanceo de corchetes en construccion ports." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
 
 		if (!tok.getNext(token))
@@ -3257,7 +3257,7 @@ ports." << endl;
 			cout << "Se esperaba un enter." << endl;
 			cout << "Error de sintaxis en construccion ports." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
 
 		// verifica que el identificador no este usado
@@ -3265,9 +3265,9 @@ ports." << endl;
 		{
 			cout << "[ERROR] Identificador ya usado." << endl;
 			cout << "El identificador del puerto no debe \
-haberse usado previamente" << endl; 
+haberse usado previamente" << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
 
 		tok.lockSymbol(port_id);
@@ -3293,9 +3293,9 @@ haberse usado previamente" << endl;
 		{
 			cout << "[ERROR] Identificador ya usado." << endl;
 			cout << "El identificador del puerto no debe \
-haberse usado previamente" << endl; 
+haberse usado previamente" << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
 
 		tok.lockSymbol(port_id);
@@ -3320,7 +3320,7 @@ haberse usado previamente" << endl;
 		cout << "La declaracion de un puerto debe estar \
 en una linea." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	port_table.push_back(puerto);
@@ -3422,7 +3422,7 @@ vector<int> Parser::leftValue(void)
 	std::vector<int> lvalue;
 
 	/* gramatica
-	 * leftvalue := id | 
+	 * leftvalue := id |
      *              id [ num ] |
      *              id [ num : num ]
      */
@@ -3436,7 +3436,7 @@ vector<int> Parser::leftValue(void)
 	{
 		cout << "[ERROR] Identificador no declarado." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	if (!tok.getNext(token))
@@ -3490,7 +3490,7 @@ vector<int> Parser::leftValue(void)
 				std::cout << "Se esperaba un ]." << endl;
 				std::cout << "Desbalanceo de corchetes." << endl;
 				std::cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			/* ix1 > ix2 */
@@ -3521,7 +3521,7 @@ vector<int> Parser::leftValue(void)
 			std::cout << "Se esperaba un ]." << endl;
 			std::cout << "Desbalanceo de corchetes." << endl;
 			std::cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
 	}
 	else
@@ -3597,9 +3597,9 @@ vector<int> Parser::left_value_offset(vector<int> bus)
 			cout << "[ERROR] Indice de un generate inexistente." << endl;
 			cout << "Error de sintaxis en una indexacion." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
-	
+
 		net = bus[generate_indices[ix]];
 
 		elem.push_back(net);
@@ -3613,7 +3613,7 @@ vector<int> Parser::left_value_offset(vector<int> bus)
 		cout << "Se esperaba una constante." << endl;
 		cout << "Error de sintaxis en una indexacion." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	num_id = ix1_token.getN();
@@ -3875,7 +3875,7 @@ void Parser::makeTree(int fanin, int node)
 		cout << n << " -> ";
 	}
 
-	graph.connect(node, fanin);	
+	graph.connect(node, fanin);
 
 	cout << endl;
 }
@@ -3959,9 +3959,9 @@ vector<int> Parser::offset(vector<int> bus)
 			cout << "[ERROR] Indice de un generate inexistente." << endl;
 			cout << "Error de sintaxis en una indexacion." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
-	
+
 		net = bus[generate_indices[ix]];
 
 		net = graph.drive(net);
@@ -3978,7 +3978,7 @@ vector<int> Parser::offset(vector<int> bus)
 		cout << "Se esperaba una constante." << endl;
 		cout << "Error de sintaxis en una indexacion." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	num_id = ix1_token.getN();
@@ -4078,11 +4078,11 @@ ports." << endl;
 		if (!token.match(TK_ID))
 		{
 			cout << "[ERROR] Token invalido." << endl;
-			cout << "Se esperaba un identificador de port." 
+			cout << "Se esperaba un identificador de port."
 					<< endl;
 			cout << "output logic id :P" << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
 
 		// rescata identificador del puerto
@@ -4123,11 +4123,11 @@ ports." << endl;
 			if (!token.match(TK_OP, OP_IX_CL))
 			{
 				cout << "[ERROR] Token invalido." << endl;
-				cout << "Se esperaba un token ]." 
+				cout << "Se esperaba un token ]."
 						<< endl;
 				cout << "Desbalanceo de corchetes en construccion ports." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			if (!tok.getNext(token))
@@ -4147,7 +4147,7 @@ ports." << endl;
 				cout << "Se esperaba un enter." << endl;
 				cout << "Error de sintaxis en construccion ports." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			// verifica que el identificador no este usado
@@ -4155,9 +4155,9 @@ ports." << endl;
 			{
 				cout << "[ERROR] Identificador ya usado." << endl;
 				cout << "El identificador del puerto no debe \
-	haberse usado previamente" << endl; 
+	haberse usado previamente" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			tok.lockSymbol(port_id);
@@ -4181,9 +4181,9 @@ ports." << endl;
 			{
 				cout << "[ERROR] Identificador ya usado." << endl;
 				cout << "El identificador del puerto no debe \
-haberse usado previamente" << endl; 
+haberse usado previamente" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			tok.lockSymbol(port_id);
@@ -4206,7 +4206,7 @@ haberse usado previamente" << endl;
 			cout << "La declaracion de un puerto debe estar \
 en una linea." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
 	}
 	// reg
@@ -4226,11 +4226,11 @@ ports." << endl;
 		if (!token.match(TK_ID))
 		{
 			cout << "[ERROR] Token invalido." << endl;
-			cout << "Se esperaba un identificador de port." 
+			cout << "Se esperaba un identificador de port."
 					<< endl;
 			cout << "output reg id :P" << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
 
 		// rescata identificador del puerto
@@ -4262,9 +4262,9 @@ ports." << endl;
 			{
 				cout << "[ERROR] Identificador ya usado." << endl;
 				cout << "El identificador del puerto no debe \
-	haberse usado previamente" << endl; 
+	haberse usado previamente" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			if (!tok.getNext(token))
@@ -4281,11 +4281,11 @@ ports." << endl;
 			if (!token.match(TK_OP, OP_IX_CL))
 			{
 				cout << "[ERROR] Token invalido." << endl;
-				cout << "Se esperaba un token ]." 
+				cout << "Se esperaba un token ]."
 						<< endl;
 				cout << "Desbalanceo de corchetes en construccion ports." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			if (!tok.getNext(token))
@@ -4305,7 +4305,7 @@ ports." << endl;
 				cout << "Se esperaba un enter." << endl;
 				cout << "Error de sintaxis en construccion ports." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			tok.lockSymbol(port_id);
@@ -4343,9 +4343,9 @@ ports." << endl;
 			{
 				cout << "[ERROR] Identificador ya usado." << endl;
 				cout << "El identificador del puerto no debe \
-haberse usado previamente" << endl; 
+haberse usado previamente" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			puerto.dim = 1;
@@ -4382,7 +4382,7 @@ haberse usado previamente" << endl;
 			cout << "La declaracion de un puerto debe estar \
 en una linea." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
-			exit(1);		
+			exit(1);
 		}
 	}
 	// error
@@ -4392,7 +4392,7 @@ en una linea." << endl;
 		cout << "Se esperaba el token logic o reg." << endl;
 		cout << "Error de sintaxis en construccion parameters." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	port_table.push_back(puerto);
@@ -4419,7 +4419,7 @@ void Parser::parameters(void)
 	uint32_t v_constant;
 	// gramatica
 	// parametros := parameters begin nl nl_list param_list end
-    // param_list := nl_list natural id = num nl_list | 
+    // param_list := nl_list natural id = num nl_list |
     //               nl_list constant id = eval_expr nl_list | e
 
 	if (!throw_nl())
@@ -4480,7 +4480,7 @@ parameters." << endl;
 		cout << "Se esperaba un enter." << endl;
 		cout << "Error de sintaxis en construccion parameters." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	if (!throw_nl())
@@ -4519,11 +4519,11 @@ parameters." << endl;
 			if (!token.match(TK_ID))
 			{
 				cout << "[ERROR] Token invalido." << endl;
-				cout << "Se esperaba un identificador de parameter." 
+				cout << "Se esperaba un identificador de parameter."
 						<< endl;
 				cout << "natural id = value :)." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			// rescata identificador del parametro
@@ -4563,11 +4563,11 @@ parameters." << endl;
 			if (!op_token.match(TK_NUM))
 			{
 				cout << "[ERROR] Token invalido." << endl;
-				cout << "Se esperaba el valor del parametro." 
+				cout << "Se esperaba el valor del parametro."
 						<< endl;
 				cout << "natural id = value :(." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			// rescata identificador del valor de parametro
@@ -4591,7 +4591,7 @@ parameters." << endl;
 				cout << "La declaracion de un parametro debe estar \
 	en una linea." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			// verifica que el identificador no este usado
@@ -4599,9 +4599,9 @@ parameters." << endl;
 			{
 				cout << "[ERROR] Identificador ya usado." << endl;
 				cout << "El identificador del parametro no debe \
-	haberse usado previamente" << endl; 
+	haberse usado previamente" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			// carga el parametro
@@ -4641,11 +4641,11 @@ parameters." << endl;
 			if (!token.match(TK_ID))
 			{
 				cout << "[ERROR] Token invalido." << endl;
-				cout << "Se esperaba un identificador de parameter." 
+				cout << "Se esperaba un identificador de parameter."
 						<< endl;
 				cout << "natural id = value :)." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			// rescata identificador del parametro
@@ -4698,7 +4698,7 @@ parameters." << endl;
 				cout << "La declaracion de un parametro debe estar \
 	en una linea." << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			/* verifica que el identificador no este usado */
@@ -4706,9 +4706,9 @@ parameters." << endl;
 			{
 				cout << "[ERROR] Identificador ya usado." << endl;
 				cout << "El identificador del parametro no debe \
-	haberse usado previamente" << endl; 
+	haberse usado previamente" << endl;
 				cout << "Linea: " << tok.getNLine() << endl;
-				exit(1);		
+				exit(1);
 			}
 
 			/* carga la constante */
@@ -4745,7 +4745,7 @@ paramaters." << endl;
 		cout << "Se esperaba un enter." << endl;
 		cout << "Error de sintaxis en construccion parameters." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 }
 
@@ -4794,7 +4794,7 @@ parameters o ports." << endl;
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion ports." 
+		cout << "Final abrupto del codigo en construccion ports."
 				<< endl;
 		cout << "No define ports." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -4814,7 +4814,7 @@ parameters o ports." << endl;
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion ports." 
+		cout << "Final abrupto del codigo en construccion ports."
 				<< endl;
 		cout << "No define ports." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -4846,7 +4846,7 @@ parameters o ports." << endl;
 		if (!throw_nl())
 		{
 			cout << "[ERROR] Insuficientes tokens." << endl;
-			cout << "Final abrupto del codigo en construccion ports." 
+			cout << "Final abrupto del codigo en construccion ports."
 					<< endl;
 			cout << "Debe terminar la construccion ports con end." << endl;
 			cout << "Linea: " << tok.getNLine() << endl;
@@ -4871,7 +4871,7 @@ port." << endl;
 		cout << "Se esperaba un enter." << endl;
 		cout << "Error de sintaxis en construccion ports." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 }
 
@@ -4893,7 +4893,7 @@ vector<int> Parser::rel(int expc_width)
 	// rel := shift == shift |
 	//			shift != shift |
 	//			shift > shift |
-	//			shift >= shift 
+	//			shift >= shift
 	//			shift < shift |
 	//			shift
 	int node;
@@ -5150,12 +5150,12 @@ bool Parser::report(int rep_type)
 	cout << "Parameters" << endl;
 	cout << "----------" << endl << endl;
 
-	cout << "Number of parameters: " << params.size() 
+	cout << "Number of parameters: " << params.size()
 			<< endl << endl;
 
 	cout << "Parameter name\t\tValue" << endl << endl;
 
-	for (auto& p : params) 
+	for (auto& p : params)
 	{
 	    std::cout << tok.getSymbol(p.first) << "\t\t\t"
 			<< p.second << std::endl;
@@ -5716,7 +5716,7 @@ void Parser::selection(void)
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion case." 
+		cout << "Final abrupto del codigo en construccion case."
 				<< endl;
 		cout << "Error de sintaxis en construccion case." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -5736,7 +5736,7 @@ void Parser::selection(void)
 	if (!throw_nl())
 	{
 		cout << "[ERROR] Insuficientes tokens." << endl;
-		cout << "Final abrupto del codigo en construccion case." 
+		cout << "Final abrupto del codigo en construccion case."
 				<< endl;
 		cout << "Error de sintaxis en construccion case." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
@@ -5960,7 +5960,7 @@ vector<int> Parser::slicing(vector<int> bus, int ix1)
 		cout << "Se esperaba una constante." << endl;
 		cout << "Error de sintaxis en una indexacion." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
-		exit(1);		
+		exit(1);
 	}
 
 	num_id = ix2_token.getN();
@@ -6054,7 +6054,7 @@ void Parser::stmts(void)
 		cout << "Error de sintaxis." << endl;
 		cout << "Linea: " << tok.getNLine() << endl;
 		exit(1);
-	}	
+	}
 
 	// agenda puertos hasta que encuentre end
 	while (!token.match(TK_KW, KW_END))
@@ -6097,7 +6097,7 @@ void Parser::source(std::string name)
 vector<int> Parser::term(int expc_width)
 {
 	// gramatica
-	// term := term * unary | 
+	// term := term * unary |
 	//			unary
 	int node;
 	vector<int> bus;

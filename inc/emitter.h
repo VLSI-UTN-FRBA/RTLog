@@ -88,12 +88,12 @@
 class Emitter
 {
 	public:
-		void body(vector<Node*>* cells, 
+		void body(vector<Node*>* cells,
 					vector<Net*>* nets);
 		void create(void);
 		void decls(vector<Port> &decl_table);
 		void module(string block);
-		void ports(vector<Port> &p_tb);
+		void ports(vector<Port> &p_tb, bool is_async);
 		void source(std::string name);
 		void tail(void);
 		void ties(bool tie_hi_used, bool tie_lo_used);
