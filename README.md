@@ -7,16 +7,16 @@ Invocation command:
 
 Help showed when running without arguments:
 
-How to use: ./compile RTLOG_FILE [OPTIONS]
-Converts a hdl file codified in rtlog (.rtl) in a Verilog file (.v) 
+	How to use: ./compile RTLOG_FILE [OPTIONS]
+	Converts a hdl file codified in rtlog (.rtl) in a Verilog file (.v) 
 
-  -c, --clock=CLOCK      Specifies the sincronization metodology 
+  	-c, --clock=CLOCK      Specifies the sincronization metodology 
                          CLOCK: global, local.
-  -R, --report=REPORT    Specifies the type of compilation report with 
+  	-R, --report=REPORT    Specifies the type of compilation report with 
                          REPORT: general, graph, async-graph, meta-graph, 
                                  cloud-logic, i2r-paths, r2o-paths, r2r-paths,.
 
-Output result:
-  0  if everything went right
-  1  if it didn't do anything (for example, it run this help),
+	Output result:
+	  0  if everything went right
+	  1  if it didn't do anything (for example, it run this help),
 
