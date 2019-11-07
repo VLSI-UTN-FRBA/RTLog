@@ -42,6 +42,8 @@ Known bugs:
 
 -Async output handshake ports sometimes are not generated
 
+-Segmentation fault when design has no R2R path. Avoid full comb circuits for the moment
+
 -R2R file generation fails when the output is single bit long
 
 -R2R files has an extra space after delimiter, must be manually edited
