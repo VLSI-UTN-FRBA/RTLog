@@ -20,6 +20,12 @@ Help showed when running without arguments:
 	  0  if everything went right
 	  1  if it didn't do anything (for example, it run this help),
 
+
+To generate documentation (not completed):
+
+	$ doxygen Doxyfile
+
+
 The Verilog files with the linear, fork and join controllers are missing, as they are technology mapped to our available technology node and therefore NDA protected.
 
 TO DO:
