@@ -1,0 +1,86 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions:
+  - rtl
+scope: source.example-c
+contexts:
+  main:
+    # Strings begin and end with quotes, and use backslashes as an escape
+    # character
+    - match: '"'
+      scope: punctuation.definition.string.begin.example-c
+      push: double_quoted_string
+
+    # Comments begin with a '//' and finish at the end of the line
+    - match: '//'
+      scope: punctuation.definition.comment.example-c
+      push: line_comment
+
+    # Keywords are if, else for and while.
+    # Note that blackslashes don't need to be escaped within single quoted
+    # strings in YAML. When using single quoted strings, only single quotes
+    # need to be escaped: this is done by using two single quotes next to each
+    # other.
+    - match: '\b(if|else|for|while|begin|end|in range|when|others|and|or|nand|nor|xor|xnor|not|cat)\b'
+      scope: keyword.control.example-c
+
+    # Numbers
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.example-c
+
+    # types
+    - match: '\b(input|output|reg|logic|natural)\b'
+      scope: storage.type.example-c
+    # block
+    - match: '\b(block|ports|parameters)\b'
+      scope: entity.name.function.example-c
+
+
+    - match: \b(__func__|NULL|true|false|TRUE|FALSE)\b
+      scope: constant.language.example-c
+    - match: \b(__FILE__|__FUNCTION__|__LINE__)\b
+      scope: support.constant.example-c
+
+  operators:
+    - match: (?:\+\+|--)
+      scope: keyword.operator.arithmetic.example-c
+    - match: '->'
+      scope: punctuation.accessor.example-c
+    - match: \+\=|-\=|\*\=|/\=|%\=|&\=|\|\=|\^\=|>>\=|<<\=
+      scope: keyword.operator.assignment.augmented.example-c
+    - match: <<|>>|&&|\|\|
+      scope: keyword.operator.arithmetic.example-c
+    - match: <\=|>\=|\=\=|<|>|\!\=
+      scope: keyword.operator.comparison.example-c
+    - match: \+|\-|/|%|\||\^|~|!
+      scope: keyword.operator.arithmetic.example-c
+    # These two operator can be both arithmetic and pointer/address related
+    - match: \*|&
+      scope: keyword.operator.example-c
+    - match: \=
+      scope: keyword.operator.assignment.example-c
+    # Negative lookahead prevents match :: when included in C++
+    - match: '\?|:(?!:)'
+      scope: keyword.operator.ternary.example-c
+    - match: '\.\.\.'
+      scope: keyword.operator.variadic.example-c
+
+      
+    
+
+
+
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.example-c
+    - match: '\\.'
+      scope: constant.character.escape.example-c
+    - match: '"'
+      scope: punctuation.definition.string.end.example-c
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.example-c
+    - match: $
+      pop: true

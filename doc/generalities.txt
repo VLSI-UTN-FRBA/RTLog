@@ -1,0 +1,236 @@
+Generalities
+============
+
+1. Preprocessor is supported. Use the same C-language preprocessor (same sintax and semantics).
+
+2. To open/close statements use begin/end (mandatory).
+
+3. One statement per line (no multiple statements in one line allowed). No need of using ";" to separate statements.
+
+4. Comments C-like: // single line comments, /* multi lines commets */.
+
+5. Case insensitive.
+
+
+
+Data types
+==========
+
+1. There are only two data types: logic or regs.
+
+2. Logic type is used for those operations that represent combinational logic.
+
+   Example:
+
+      logic foo[7]
+
+3. Data types represents always bit vectors whose LSB is always bit 0 and their MSB is bit size-1.
+
+   Example:
+
+      logic foo[5] represents a bit vector of 5 bits whose LSB is 0 and MSB is 4.
+
+
+
+System interface specification
+==============================
+
+1. Each digital system will be specified by the "block" statement:
+
+block <block_name> begin
+   parameters begin
+      <parameter_type_1> <parameter_name_1> = <default_value_1>
+      <parameter_type_2> <parameter_name_2> = <default_value_2>
+      ...
+      <parameter_type_n> <parameter_name_n> = <default_value_n>
+   end
+   ports begin
+      <port_io_type_1> <port_data_type_1> <port_name_1>[port_size_1] 
+      <port_io_type_2> <port_data_type_2> <port_name_2>[port_size_2] 
+      ...
+      <port_io_type_m> <port_data_type_m> <port_name_m>[port_size_m] 
+   end
+
+   <block_specification>
+
+end
+
+
+2. Interface parameters can only be numeric data types (natural, integer) or string.
+
+   Example:
+
+      block alu begin
+         parameters begin
+            natural I_WORD_WIDTH = 16
+            natural O_WORD_WIDTH = 16
+         end
+         ports begin
+            input  logic  data_a[I_WORD_WIDTH]
+            input  logic  data_b[I_WORD_WIDTH]
+            output logic  result[O_WORD_WIDTH]
+         end
+
+         ...
+
+      end
+
+
+3. Port list is mandatory. At least, output ports must be specified.
+
+4. Port I/O type can only be input or output.
+
+5. Port data type can only be:
+      * For inputs  : logic.
+      * For outputs : logic or reg.
+
+
+Parameters
+==========
+
+1. There are only one type of parameters: interface parameters.
+
+2. Interface parameters are listed in the block interface definition. Interface parameters are optional.
+
+3. The default value of an interface parameter can be overwritten in block instantiation.
+
+4. Interface parameters can be natural numbers or strings.
+
+   Example:
+
+      block alu begin
+         parameters begin
+            natural I_WORD_WIDTH = 16
+            natural O_WORD_WIDTH = 16
+            string  ACCESS_TYPE  = "READ_WRITE"
+         end
+         ports begin
+            <port_list>
+         end
+
+         ...
+
+      end
+
+Local signals
+=============
+
+1. Local signals are listed in the block body.
+
+2. There are two types of local signals: logic and reg.
+
+   Example:
+
+      block alu begin
+         ports begin
+            <port_list>
+         end
+
+         logic add[5]
+         reg   result[7] = d23
+
+      end
+
+
+Operators for signals only
+==========================
+
+1. Concatenation:
+   "cat"
+   Example:
+      c = a cat b
+
+2. Replication:
+   "rep"
+   Example:
+      b = a rep 3
+
+3. Filling:
+   "others"
+
+4. Bit wise logic:
+   "not"  : logic inversion (unary operator)
+   "or"   : logic or (binary operator - only on same size operands)
+   "and"  : logic and (binary operator - only on same size operands)
+   "xor"  : logic xor (binary operator - only on same size operands)
+   "xnor" : logic xnor (binary operator - only on same size operands)
+
+5. Slicing:
+   a[4:2]
+
+6. Assigment (only on same size lhs and rhs):
+   "="
+
+7. Shift:
+   "u>>" : rigth shift, left zero padding.
+   "s>>" : right shift, left msb padding.
+   "<<"  : left shift, rigth zero padding.
+
+8. Comparison:
+   "=="  : equal (bit wise)
+   "!="  : different (bit wise)
+   ">"   : greater (unless specified, operands are interpreted as unsigned)
+   ">="  : greater or equal (unless specified, operands are interpreted as unsigned)
+   "<"   : less (unless specified, operands are interpreted as unsigned)
+   "<="  : less or equal (unless specified, operands are interpreted as unsigned)
+
+9. Addition:
+   "+"   : adds two operands of same numbers of bits (N) and returns a N bit vector.
+   "+x"  : adds two operands of same number of bits (N) and returns a N+1 bit vector.
+   "-"   : subtract two operands of same numbers of bits (N) and returns a N bit vector.
+   "-x"  : subtract two operands of same number of bits (N) and returns a N+1 bit vector.
+
+10. Product:
+   "*"   : multiply two operands of N and M bits and returns a bit vector of max(N,M) bits.
+   "*x"  : multiply two signed operands of N and M bits and returns a bit vector of max(N,M) bits.
+
+
+Selection statements (for signals only)
+=======================================
+
+1. "if-elsif-else"
+   if ... begin
+      ...
+   end
+   elsif ... begin
+      ...
+   end
+   else begin
+      ...
+   end
+
+2. "case"
+   case ... begin
+      case_1: begin
+      ...
+      end
+      case_2: begin
+      ...
+      end
+      ...
+      case_n: begin
+      ...
+      end
+      others: begin
+      ...
+      end
+   end
+
+
+Assignments
+===========
+
+1. Signals can be assigned to other signals, literals, or logic operators results.
+
+2. Right hand size must be always match left hand size of the assignment.
+
+   Example:
+
+      logic a[4]
+      logic b[4]
+      logic c[4]
+      reg   d[4]
+
+      c = a & B
+      d = c
+

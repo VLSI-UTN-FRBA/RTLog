@@ -1,0 +1,24 @@
+RTLOG Operands Precedence
+-------------------------
+
+From higuer to lower:
+
+others
+
+not
+
++ -(unary)
+
+*
+
++ +x - -x (addition and sustraction)
+
+u>> s>> <<
+
+== != > >= < <=
+
+and xor or
+
+rep
+
+cat

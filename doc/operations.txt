@@ -1,0 +1,81 @@
+1. Concatenation:
+   "cat"
+   Example:
+      c = a cat b
+
+2. Replication:
+   "rep"
+   Example:
+      b = a rep 3
+
+3. Filling:
+   "others"
+
+4. Bit wise logic:
+   "not"  : logic inversion (unary operator)
+   "or"   : logic or (binary operator - only on same size operands)
+   "and"  : logic and (binary operator - only on same size operands)
+   "xor"  : logic xor (binary operator - only on same size operands)
+   "xnor" : logic xnor (binary operator - only on same size operands)
+
+5. Slicing:
+   a[4:2]
+
+6. Assigment (only on same size lhs and rhs):
+   "="
+
+7. Shift:
+   ">>" : rigth shift, left zero padding.
+   "s>>" : right shift, left msb padding.
+   "<<"  : left shift, rigth zero padding.
+
+8. Comparison:
+   "=="  : equal (bit wise)
+   "!="  : different (bit wise)
+   ">"   : greater (unless specified, operands are interpreted as unsigned)
+   ">="  : greater or equal (unless specified, operands are interpreted as unsigned)
+   "<"   : less (unless specified, operands are interpreted as unsigned)
+   "<="  : less or equal (unless specified, operands are interpreted as unsigned)
+
+9. Addition:
+   "+"   : adds two operands of same numbers of bits (N) and returns a N bit vector.
+   "+x"  : adds two operands of same number of bits (N) and returns a N+1 bit vector.
+   "-"   : subtract two operands of same numbers of bits (N) and returns a N bit vector.
+   "-x"  : subtract two operands of same number of bits (N) and returns a N+1 bit vector.
+
+10. Product:
+   "*"    : multiply two operands of N and M bits and returns a bit vector of max(N,M) bits.
+   "*x"   : multiply two signed operands of N and M bits and returns a bit vector of max(N,M) bits.
+
+11. "if-elsif-else"
+   if ... 
+   begin
+      ...
+   end
+   elsif ... 
+   begin
+      ...
+   end
+   else 
+   begin
+      ...
+   end
+
+Not implemented yet:
+
+12. "case"
+   case ... begin
+      case_1: begin
+      ...
+      end
+      case_2: begin
+      ...
+      end
+      ...
+      case_n: begin
+      ...
+      end
+      others: begin
+      ...
+      end
+   end
